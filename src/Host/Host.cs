@@ -13,13 +13,12 @@ namespace Host
             // 103 -> 3
             // -5 -> 2
 
-            Person myPerson = new Person
-            {
-                Age = 103
-            };
+            IWorker myPerson = GenerateWorker();
 
-            int number = myPerson.SymbolCount(123);
-            Console.WriteLine($"{nameof(number)} = {number}");
+/*            int number = myPerson.SymbolCount(123);
+            Console.WriteLine($"{nameof(number)} = {number}");*/
+
+            myPerson.Work("My job");
 
 
             /*Account<long> myAccount = new Account<long>();
@@ -52,6 +51,21 @@ namespace Host
             }
 
             Console.WriteLine("FINISH");*/
+        }
+
+        static IWorker GenerateWorker()
+        {
+            if (DateTime.Now.Microsecond % 2 == 1)
+            {
+                return new Worker
+                {
+                    Age = -5
+                };
+            }
+            else
+            {
+                return new AiBot();
+            }
         }
 /*
         public static void PrintV<T>(T toPrint) //where T : notnull

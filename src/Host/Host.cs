@@ -10,7 +10,7 @@ namespace Host
             Account<long> myAccount = new Account<long>();
             myAccount.Id = 100L;
 
-            int idLocal = (int)(long)myAccount.Id; // в лонг, а потом в инт
+            //int idLocal = (int)(long)myAccount.Id; // в лонг, а потом в инт
 
 
 

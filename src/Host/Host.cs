@@ -10,8 +10,15 @@ namespace Host
             Account<long> myAccount = new Account<long>();
             myAccount.Id = 100L;
 
-            //int idLocal = (int)(long)myAccount.Id; // в лонг, а потом в инт
+            int idLocal = (int)(long)myAccount.Id; // в лонг, а потом в инт
 
+            PrintV<int>(idLocal);
+            PrintV(idLocal);
+            PrintV("hello");
+
+            object? myOb = "test";
+            myOb = GenerateValue();
+            PrintV(myOb);
 
 
             /*try
@@ -31,5 +38,12 @@ namespace Host
 
             Console.WriteLine("FINISH");*/
         }
+
+        public static void PrintV<T>(T toPrint) //where T : notnull
+        {
+            Console.WriteLine("My value is: " + toPrint);
+        }
+
+        public static object? GenerateValue() => null;
     }
 }

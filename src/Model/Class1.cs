@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Model
 {
-    internal class Class1
+    public class MyNetworkClient : IDisposable
     {
+        private HttpClient _client;
+
+        public MyNetworkClient()
+        {
+            _client = new HttpClient();
+        }
+
+        public void Dispose() 
+        {
+            _client.Dispose();
+        }
     }
 }

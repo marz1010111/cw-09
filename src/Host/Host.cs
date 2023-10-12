@@ -20,6 +20,10 @@ namespace Host
 
             myPerson.Work("My job");
 
+            var httpClient = new HttpClient();
+
+            httpClient.Dispose();
+
 
             /*Account<long> myAccount = new Account<long>();
             myAccount.Id = 100L;

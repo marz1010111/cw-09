@@ -1,4 +1,5 @@
 ﻿using Model;
+using System.Reflection;
 
 namespace Host
 {
@@ -7,7 +8,21 @@ namespace Host
         static void Main(string[] arg)
         {
 
-            Account<long> myAccount = new Account<long>();
+            // кол символов в возврасте 
+            // 12 -> 2
+            // 103 -> 3
+            // -5 -> 2
+
+            Person myPerson = new Person
+            {
+                Age = 103
+            };
+
+            int number = myPerson.SymbolCount(123);
+            Console.WriteLine($"{nameof(number)} = {number}");
+
+
+            /*Account<long> myAccount = new Account<long>();
             myAccount.Id = 100L;
 
             int idLocal = (int)(long)myAccount.Id; // в лонг, а потом в инт
@@ -18,7 +33,7 @@ namespace Host
 
             object? myOb = "test";
             myOb = GenerateValue();
-            PrintV(myOb);
+            PrintV(myOb);*/
 
 
             /*try
@@ -38,12 +53,14 @@ namespace Host
 
             Console.WriteLine("FINISH");*/
         }
-
+/*
         public static void PrintV<T>(T toPrint) //where T : notnull
         {
             Console.WriteLine("My value is: " + toPrint);
         }
 
-        public static object? GenerateValue() => null;
+        public static object? GenerateValue() => null;*/
+
+         
     }
 }
